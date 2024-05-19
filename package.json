@@ -4,6 +4,7 @@
   "description": "Maildiver Node.js library",
   "main": "./bin/index.js",
   "scripts": {
+    "prepublishOnly": "npm run test && npm run build",
     "build": "rm -rf bin && tsup src/index.ts --format esm,cjs --dts --out-dir bin",
     "lint": "eslint --fix --ext .ts .",
     "prettier": "prettier --check .",
