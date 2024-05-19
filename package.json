@@ -19,6 +19,10 @@
     "node": ">=20"
   },
   "author": "Maildiver",
+  "homepage": "https://github.com/maildiver/maildiver-node",
+  "bugs": {
+    "url": "https://github.com/maildiver/maildiver-node/issues"
+  },
   "license": "MIT",
   "exports": {
     ".": {
