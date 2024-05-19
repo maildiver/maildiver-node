@@ -32,6 +32,8 @@ const maildiver = new Maildiver(config);
 
 2. Import the client and use the methods.
 
+### Send an email with the HTML content
+
 ```typescript
 import { maildiver } from './maildiver';
 
@@ -42,3 +44,41 @@ await maildiver.email.send({
   html: '<p>Maildiver Node.js SDK is awesome!</p>',
 });
 ```
+
+### Send an email with the dynamic variables in the HTML content
+
+```typescript
+import { maildiver } from './maildiver';
+
+await maildiver.email.send({
+  to: 'sudo@example.com',
+  from: 'you@example.com',
+  subject: 'Email from the Maildiver Node.js SDK',
+  html: '<p>Hi, {{ name }}! Maildiver Node.js SDK is awesome!</p>',
+  variables: {
+    values: {
+      name: 'Developer Name',
+    },
+    default_values: {
+      name: 'Developer',
+    },
+  },
+});
+```
+
+It's highly recommended to use the `default_values` in the `variables` object to avoid low-quality emails.
+
+### Send an email with the markdown content
+
+```typescript
+import { maildiver } from './maildiver';
+
+await maildiver.email.send({
+  to: 'sudo@example.com',
+  from: 'you@example.com',
+  subject: 'Email from the Maildiver Node.js SDK',
+  markdownFile: 'path/to/markdown.md',
+});
+```
+
+If you include the dynamic variables in the markdown file, you can use the `variables` object as well.
