@@ -1,0 +1,50 @@
+{
+  "name": "maildiver",
+  "version": "0.1.0",
+  "description": "Maildiver Node.js library",
+  "main": "./bin/index.js",
+  "scripts": {
+    "build": "rm -rf bin && tsup src/index.ts --format esm,cjs --dts --out-dir bin",
+    "lint": "eslint --fix --ext .ts .",
+    "prettier": "prettier --check .",
+    "test": "npm run unit-test",
+    "unit-test": "node --test --require ts-node/register ./test/**/*.ts"
+  },
+  "module": "./bin/index.mjs",
+  "types": "./bin/index.d.ts",
+  "files": [
+    "bin/**"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "Maildiver",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./bin/index.d.ts",
+        "default": "./bin/index.mjs"
+      },
+      "require": {
+        "types": "./bin/index.d.ts",
+        "default": "./bin/index.js"
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@react-email/render": "^0.0.13",
+    "marked": "^12.0.2"
+  }
+}
