@@ -15,7 +15,13 @@ export type EmailBody = RequireAtLeastOne<{
   html?: string;
   react?: ReactElement | ReactNode | null;
   markdownFile?: string;
+  variables?: SendEmailVariables;
 }>;
+
+export type SendEmailVariables = {
+  values: Record<string, string>;
+  default_values: Record<string, string>;
+};
 
 export type FinalEmailBody = Omit<
   EmailBody,
