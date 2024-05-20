@@ -1,6 +1,6 @@
 {
   "name": "maildiver",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Maildiver Node.js library",
   "main": "./bin/index.js",
   "scripts": {
